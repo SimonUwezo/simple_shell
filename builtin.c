@@ -2,14 +2,14 @@
 
 /**
  * _myexit - Function that exits the shell.
- * @info: Struct containing potential arguments.
- *  Return: Always 0.
+ * @info: Structal potential arguments.
+ *  Return: Always 0 always
  */
 int _myexit(info_t *info)
 {
 	int exitcheck;
 
-	if (info->argv[1])  /* If there is an exit arguement */
+	if (info->argv[1])  /* If an exit arguement */
 	{
 		exitcheck = _erratoi(info->argv[1]);
 		if (exitcheck == -1)
@@ -28,7 +28,7 @@ int _myexit(info_t *info)
 }
 
 /**
- * _mycd - Function that changes the current directory.
+ * _mycd - Function that changes into current directory.
  * @info: Structure containing potential arguments.
  *  Return: 0
  */
@@ -44,7 +44,7 @@ int _mycd(info_t *info)
 	{
 		dir = _getenv(info, "HOME=");
 		if (!dir)
-			chdir_ret = /* TODO: what should this be? */
+			chdir_ret = /* ToDo: what should this be? */
 				chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
 		else
 			chdir_ret = chdir(dir);
@@ -77,8 +77,8 @@ int _mycd(info_t *info)
 }
 
 /**
- * _myhelp - changes the current directory of the process
- * @info: Struct containing potential arguments.
+ * _myhelp - help the current directory of the process
+ * @info: Structral potential arguments.
  *  Return: 0
  */
 int _myhelp(info_t *info)
